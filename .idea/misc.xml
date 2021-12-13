@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/drawable-v24/ic_google.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/drawable-v24/switch_trcks.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/drawable-v24/switch_tumbs.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/activity_main.xml" value="0.12273550724637682" />
+        <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/switch_trcks.xml" value="0.12273550724637682" />
+        <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/switch_tumbs.xml" value="0.12273550724637682" />
       </map>
     </option>
   </component>
