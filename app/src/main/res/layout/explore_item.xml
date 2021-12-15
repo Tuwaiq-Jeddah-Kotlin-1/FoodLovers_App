@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="370dp"
+        android:layout_height="248dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="7dp"
+        android:layout_marginTop="-360dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+     <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+         <TextView
+             android:id="@+id/recipeName"
+             android:layout_width="200dp"
+             android:layout_height="35dp"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+             android:hint="Recipe Name "
+             android:textColor="@color/black"
+             android:textSize="20dp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.241"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/addedImage"
+             app:layout_constraintVertical_bias="0.483"
+             tools:ignore="TextContrastCheck" />
+
+         <ImageView
+        android:id="@+id/addedImage"
+        android:layout_width="300dp"
+        android:layout_height="170dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:src="@drawable/ic_launcher_background"
+        android:visibility="visible"
+        android:layout_marginTop="-10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238"
+        />
+
+         <ImageView
+             android:id="@+id/hearttwoIcon"
+             android:layout_width="40dp"
+             android:layout_height="30dp"
+             android:layout_marginTop="10dp"
+             android:src="@drawable/hearttwo"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.936"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="@+id/recipeName"
+             app:layout_constraintVertical_bias="0.0" />
+
+
+     </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
