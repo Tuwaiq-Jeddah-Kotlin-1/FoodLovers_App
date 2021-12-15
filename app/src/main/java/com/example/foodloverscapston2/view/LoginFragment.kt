@@ -1,4 +1,4 @@
-package com.example.foodloverscapston2
+package com.example.foodloverscapston2.view
 
 import android.os.Bundle
 import android.util.Log
@@ -7,12 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.fragment.findNavController
+import com.example.foodloverscapston2.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.auth.User
 
 class LoginFragment : Fragment() {
     private lateinit var sing_up:TextView
@@ -22,11 +23,6 @@ class LoginFragment : Fragment() {
     private lateinit var firebaseFirestore: FirebaseFirestore
     private lateinit var ref: DatabaseReference
     private lateinit var auth: FirebaseAuth
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,52 +41,69 @@ class LoginFragment : Fragment() {
 
         btn_singUp.setOnClickListener{
                 if (checkEmpty(arrayListOf( singup_email, singup_passwords))) {
-                     if (singUp_password_conf.text.toString() != singup_passwords.text.toString()) {
-                        singUp_password_conf.error = "Password mismatch"
-                    } else {
-                        auth.createUserWithEmailAndPassword(singup_email.text.toString(), singup_passwords.text.toString())
-                            .addOnCompleteListener { task ->
-                                if (task.isSuccessful) {
+         if (singUp_password_conf.text.toString() != singup_passwords.text.toString()) {
+           singUp_password_conf.error = "Password mismatch"
+         } else {
+           auth.createUserWithEmailAndPassword(singup_email.text.toString(), singup_passwords.text.toString())
+            .addOnCompleteListener { task ->
+               if (task.isSuccessful) {
 
-                                    val firebaseUserId = auth.currentUser!!.uid!!
-                                    ref = FirebaseDatabase.getInstance().reference.child("Users")
-                                        .child(firebaseUserId)
-                                    val user = User(firebaseUserId,email.text.toString())
-                                    firebaseFirestore = FirebaseFirestore.getInstance()
-                                    firebaseFirestore.collection("users").document(firebaseUserId)
-                                        .set(user)
-                                        .addOnSuccessListener {
-                                            Log.d("TAG", "DocumentSnapshot successfully written!")
+              val firebaseUserId = auth.currentUser!!.uid!!
+                ref = FirebaseDatabase.getInstance().reference.child("Users")
+                .child(firebaseUserId)
+               val user = com.example.foodloverscapston2.User(
+                  firebaseUserId,
+                  email.text.toString()
+               )
+             firebaseFirestore = FirebaseFirestore.getInstance()
+             firebaseFirestore.collection("users").document(firebaseUserId)
+               .set(user)
+               .addOnSuccessListener {
+                  Log.d("TAG", "DocumentSnapshot successfully written!")
                                         }
-                                        .addOnFailureListener { e ->
-                                            Log.w("TAG", "Error writing document", e)
+               .addOnFailureListener { e ->
+                 Log.w("TAG", "Error writing document", e)
                                         }
+           Toast.makeText(context,
+           "You've created new account Successfully",
+             Toast.LENGTH_LONG)
+              .show()
 
+         findNavController().navigate(R.id.actionLoginFragmentToMyRecipeFragment)
 
-                                    Toast.makeText(context,
-                                        "You've created new account Successfully",
-                                        Toast.LENGTH_LONG)
-                                        .show()
-
-                                    //val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
-                                    //findNavController().navigate(action)
-
-                                } else {
-                                    Toast.makeText(context,
-                                        task.exception!!.message.toString(),
-                                        Toast.LENGTH_LONG)
-                                        .show()
-                                } }
-                    }
-                }
+        } else {
+            Toast.makeText(context,
+             task.exception!!.message.toString(),
+             Toast.LENGTH_LONG)
+                .show()
+           } }
+         } }
         }
 
         btn_logIn.setOnClickListener{
-            auth.createUserWithEmailAndPassword(
-                email.text.toString().trim(),
-                password.text.toString().trim()
-            )
-        }
+        if (checkEmpty(arrayListOf(email, password))) {
+        auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
+            .addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+            //val firebaseUser: FirebaseUser = task.result!!.user!!
+             Toast.makeText(
+                context,
+                 "Login is Successfully",
+                 Toast.LENGTH_LONG
+                   )
+                 .show()
+            findNavController().navigate(R.id.actionLoginFragmentToMyRecipeFragment)
+            } else {
+                  Toast.makeText(
+                   context,
+                   task.exception!!.message.toString(),
+                    Toast.LENGTH_LONG
+                     )
+                   .show()
+                    }
+                    }
+                }
+            }
 
         sing_up = view.findViewById(R.id.singUp)
         log_in = view.findViewById(R.id.logIn)
@@ -113,8 +126,8 @@ class LoginFragment : Fragment() {
             log_in_Layout.visibility = View.VISIBLE
             log_in.setTextColor(resources.getColor(R.color.textColor,null))
         }
-        return view
-        }
+         return view
+      }
     fun checkEmpty(arrayListOf: ArrayList<EditText>): Boolean {
         var returnValue = false
         for (i in arrayListOf) {
