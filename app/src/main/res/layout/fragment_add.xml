@@ -66,7 +66,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
-                android:id="@+id/addRecipeDescription"
+                android:id="@+id/addRecipeInstructions"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -74,7 +74,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/raduis"
                 android:gravity="top"
-                android:hint="Enter Recipe Description"
+                android:hint="Enter Recipe Instructions"
                 android:textSize="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -85,7 +85,7 @@
         </androidx.cardview.widget.CardView>
 
         <Button
-            android:id="@+id/Add"
+            android:id="@+id/addButton"
             android:layout_width="110dp"
             android:layout_height="60dp"
             android:backgroundTint="@color/white"
@@ -103,7 +103,7 @@
             app:layout_constraintVertical_bias="0.406" />
 
         <Button
-            android:id="@+id/Cancel"
+            android:id="@+id/cancelButton"
             android:layout_width="113dp"
             android:layout_height="61dp"
             android:backgroundTint="@color/white"

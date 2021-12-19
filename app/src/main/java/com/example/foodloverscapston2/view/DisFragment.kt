@@ -1,34 +1,30 @@
 package com.example.foodloverscapston2.view
 
 import android.os.Bundle
+import android.os.Looper.loop
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.navigation.fragment.navArgs
+import coil.load
 import com.example.foodloverscapston2.R
+import com.example.foodloverscapston2.data.models.Meals
+import com.example.foodloverscapston2.data.models.MealsData
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [DisFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class DisFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var meal_n: TextView
+    private lateinit var meal_ingredients: TextView
+    private lateinit var t_ingredients: TextView
+    private lateinit var t_measures: TextView
+    private lateinit var meal_instructions: TextView
+    private lateinit var tv_instructions: TextView
+    private lateinit var imgg_meal: ImageView
+    private lateinit var youtubeLink: ImageView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,23 +34,71 @@ class DisFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_dis, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DisFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DisFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        val args: DisFragmentArgs by navArgs()
+        val receivedData = args.mealsDis
+
+        meal_n = view.findViewById(R.id.meal_n)
+        meal_ingredients = view.findViewById(R.id.meal_ingredients)
+        t_ingredients = view.findViewById(R.id.t_ingredients)
+        t_measures = view.findViewById(R.id.t_measures)
+        meal_instructions = view.findViewById(R.id.meal_instructions)
+        tv_instructions = view.findViewById(R.id.tv_instructions)
+        imgg_meal = view.findViewById(R.id.imgg_meal)
+        youtubeLink = view.findViewById(R.id.youtubeLink)
+
+        meal_n.text = receivedData.strMeal
+        tv_instructions.text = receivedData.strInstructions
+        imgg_meal.load(receivedData.strMealThumb)
+
+
+
+//        youtubeLink.setOnClickListener {
+//
+//        }
+//        t_ingredients.text = receivedData.strIngredient1
+//        t_ingredients.text = receivedData.strIngredient2
+//        t_ingredients.text = receivedData.strIngredient3
+//        t_ingredients.text = receivedData.strIngredient4
+//        t_ingredients.text = receivedData.strIngredient5
+//        t_ingredients.text = receivedData.strIngredient6
+//        t_ingredients.text = receivedData.strIngredient7
+//        t_ingredients.text = receivedData.strIngredient8
+//        t_ingredients.text = receivedData.strIngredient9
+//        t_ingredients.text = receivedData.strIngredient10
+//        t_ingredients.text = receivedData.strIngredient11
+//        t_ingredients.text = receivedData.strIngredient12
+//        t_ingredients.text = receivedData.strIngredient13
+//        t_ingredients.text = receivedData.strIngredient14
+//        t_ingredients.text = receivedData.strIngredient15
+//        t_ingredients.text = receivedData.strIngredient16
+//        t_ingredients.text = receivedData.strIngredient17
+//        t_ingredients.text = receivedData.strIngredient18
+//        t_ingredients.text = receivedData.strIngredient19
+//        t_ingredients.text = receivedData.strIngredient20
+//        t_ingredients_measures.text = receivedData.strMeasure1
+//        t_ingredients_measures.text = receivedData.strMeasure2
+//        t_ingredients_measures.text = receivedData.strMeasure3
+//        t_ingredients_measures.text = receivedData.strMeasure4
+//        t_ingredients_measures.text = receivedData.strMeasure5
+//        t_ingredients_measures.text = receivedData.strMeasure6
+//        t_ingredients_measures.text = receivedData.strMeasure7
+//        t_ingredients_measures.text = receivedData.strMeasure8
+//        t_ingredients_measures.text = receivedData.strMeasure9
+//        t_ingredients_measures.text = receivedData.strMeasure10
+//        t_ingredients_measures.text = receivedData.strMeasure11
+//        t_ingredients_measures.text = receivedData.strMeasure12
+//        t_ingredients_measures.text = receivedData.strMeasure13
+//        t_ingredients_measures.text = receivedData.strMeasure14
+//        t_ingredients_measures.text = receivedData.strMeasure15
+//        t_ingredients_measures.text = receivedData.strMeasure16
+//        t_ingredients_measures.text = receivedData.strMeasure17
+//        t_ingredients_measures.text = receivedData.strMeasure18
+//        t_ingredients_measures.text = receivedData.strMeasure19
+//        t_ingredients_measures.text = receivedData.strMeasure20
+
     }
+
 }
+

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.fragment.findNavController
 import com.example.foodloverscapston2.R
+import com.example.foodloverscapston2.data.User
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -39,6 +40,11 @@ class LoginFragment : Fragment() {
         val btn_logIn = view.findViewById<Button>(R.id.singIn)
         val btn_singUp = view.findViewById<Button>(R.id.sing_Up)
 
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+        findNavController().navigate(R.id.actionLoginFragmentToMyRecipeFragment)
+        }
+
         btn_singUp.setOnClickListener{
                 if (checkEmpty(arrayListOf( singup_email, singup_passwords))) {
          if (singUp_password_conf.text.toString() != singup_passwords.text.toString()) {
@@ -51,7 +57,7 @@ class LoginFragment : Fragment() {
               val firebaseUserId = auth.currentUser!!.uid!!
                 ref = FirebaseDatabase.getInstance().reference.child("Users")
                 .child(firebaseUserId)
-               val user = com.example.foodloverscapston2.User(
+               val user = User(
                   firebaseUserId,
                   email.text.toString()
                )
