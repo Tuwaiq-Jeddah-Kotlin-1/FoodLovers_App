@@ -66,7 +66,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
-                android:id="@+id/editRecipeDescription"
+                android:id="@+id/editRecipeInstructions"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -74,7 +74,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/raduis"
                 android:gravity="top"
-                android:hint="Recipe Description"
+                android:hint="Recipe Instructions"
                 android:textSize="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -17,9 +17,7 @@
         android:id="@+id/myRecipeFragment"
         android:name="com.example.foodloverscapston2.view.MyRecipeFragment"
         android:label="MyRecipe">
-        <action
-            android:id="@+id/actionMyRecipeFragmentToExplorerFragment2"
-            app:destination="@id/explorerFragment" />
+
         <action
             android:id="@+id/actionMyRecipeFragmentToAddFragment"
             app:destination="@id/addFragment" />
@@ -34,9 +32,10 @@
         android:id="@+id/explorerFragment"
         android:name="com.example.foodloverscapston2.view.ExplorerFragment"
         android:label="Discover" >
+
         <action
-            android:id="@+id/actionExplorerFragmentToFavoriteFragment"
-            app:destination="@id/favoriteFragment" />
+            android:id="@+id/actionExplorerFragmentToDisFragment"
+            app:destination="@id/disFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
@@ -45,9 +44,29 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.foodloverscapston2.view.AddFragment"
-        android:label="NewRecipe" />
+        android:label="NewRecipe" >
+        <action
+            android:id="@+id/actionAddFragmentToMyRecipeFragment"
+            app:destination="@id/myRecipeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/editFragment"
         android:name="com.example.foodloverscapston2.view.EditFragment"
-        android:label="EditRecipe" />
+        android:label="EditRecipe" >
+        <action
+            android:id="@+id/actionEditFragmentToMyRecipeFragment"
+            app:destination="@id/myRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/disFragment"
+        android:name="com.example.foodloverscapston2.view.DisFragment"
+        android:label="fragment_dis"
+        tools:layout="@layout/fragment_dis" >
+        <action
+            android:id="@+id/actionDisFragmentToExplorerFragment"
+            app:destination="@id/explorerFragment" />
+        <argument
+            android:name="mealsDis"
+            app:argType="com.example.foodloverscapston2.data.models.MealsData" />
+    </fragment>
 </navigation>
