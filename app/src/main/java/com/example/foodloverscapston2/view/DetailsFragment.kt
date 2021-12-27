@@ -1,7 +1,6 @@
 package com.example.foodloverscapston2.view
 
 import android.os.Bundle
-import android.os.Looper.loop
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +10,9 @@ import android.widget.TextView
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.example.foodloverscapston2.R
-import com.example.foodloverscapston2.data.models.Meals
-import com.example.foodloverscapston2.data.models.MealsData
 
 
-class DisFragment : Fragment() {
+class DetailsFragment : Fragment() {
     private lateinit var meal_n: TextView
     private lateinit var meal_ingredients: TextView
     private lateinit var t_ingredients: TextView
@@ -31,12 +28,12 @@ class DisFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dis, container, false)
+        return inflater.inflate(R.layout.fragment_details, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        val args: DisFragmentArgs by navArgs()
+        val args: DetailsFragmentArgs by navArgs()
         val receivedData = args.mealsDis
 
         meal_n = view.findViewById(R.id.meal_n)
@@ -53,10 +50,9 @@ class DisFragment : Fragment() {
         imgg_meal.load(receivedData.strMealThumb)
 
 
-
-//        youtubeLink.setOnClickListener {
+//       youtubeLink.setOnClickListener {
 //
-//        }
+//     }
 //        t_ingredients.text = receivedData.strIngredient1
 //        t_ingredients.text = receivedData.strIngredient2
 //        t_ingredients.text = receivedData.strIngredient3

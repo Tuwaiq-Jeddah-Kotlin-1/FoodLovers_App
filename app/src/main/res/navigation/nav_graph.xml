@@ -8,7 +8,7 @@
         android:id="@+id/LoginFragment"
         android:name="com.example.foodloverscapston2.view.LoginFragment"
         android:label="login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/actionLoginFragmentToMyRecipeFragment"
             app:destination="@id/myRecipeFragment" />
@@ -16,57 +16,68 @@
     <fragment
         android:id="@+id/myRecipeFragment"
         android:name="com.example.foodloverscapston2.view.MyRecipeFragment"
-        android:label="MyRecipe">
-
+        android:label="MyRecipe"
+        tools:layout="@layout/fragment_my_recipe">
         <action
             android:id="@+id/actionMyRecipeFragmentToAddFragment"
             app:destination="@id/addFragment" />
         <action
             android:id="@+id/actionMyRecipeFragmentToEditFragment"
             app:destination="@id/editFragment" />
-        <action
-            android:id="@+id/actionMyRecipeFragmentToLoginFragment"
-            app:destination="@id/LoginFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/explorerFragment"
         android:name="com.example.foodloverscapston2.view.ExplorerFragment"
-        android:label="Discover" >
-
+        android:label="Discover"
+        tools:layout="@layout/fragment_explorer">
         <action
-            android:id="@+id/actionExplorerFragmentToDisFragment"
-            app:destination="@id/disFragment" />
+            android:id="@+id/actionExplorerFragmentToDetailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/favoriteFragment"
-        android:name="com.example.foodloverscapston2.view.FavoriteFragment"
-        android:label="FavoriteFragment" />
+
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.foodloverscapston2.view.AddFragment"
-        android:label="NewRecipe" >
+        android:label="NewRecipe"
+        tools:layout="@layout/fragment_add">
         <action
             android:id="@+id/actionAddFragmentToMyRecipeFragment"
             app:destination="@id/myRecipeFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/editFragment"
         android:name="com.example.foodloverscapston2.view.EditFragment"
-        android:label="EditRecipe" >
+        android:label="RecipeDetails"
+        tools:layout="@layout/fragment_edit">
         <action
             android:id="@+id/actionEditFragmentToMyRecipeFragment"
             app:destination="@id/myRecipeFragment" />
+        <argument
+            android:name="editdata"
+            app:argType="com.example.foodloverscapston2.data.models.Recipe" />
     </fragment>
+
     <fragment
-        android:id="@+id/disFragment"
-        android:name="com.example.foodloverscapston2.view.DisFragment"
-        android:label="fragment_dis"
-        tools:layout="@layout/fragment_dis" >
+        android:id="@+id/detailsFragment"
+        android:name="com.example.foodloverscapston2.view.DetailsFragment"
+        android:label="fragment_details">
         <action
             android:id="@+id/actionDisFragmentToExplorerFragment"
             app:destination="@id/explorerFragment" />
         <argument
             android:name="mealsDis"
             app:argType="com.example.foodloverscapston2.data.models.MealsData" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProfileFragment"
+        android:name="com.example.foodloverscapston2.view.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/actionProfileFragmentToLoginFragment"
+            app:destination="@id/LoginFragment" />
     </fragment>
 </navigation>
