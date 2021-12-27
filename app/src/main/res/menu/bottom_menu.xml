@@ -4,20 +4,21 @@
 
     <item
         android:id="@+id/myRecipeFragment"
-        android:title="MyRecipe"
+        android:title=""
         android:icon="@drawable/recipe"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/explorerFragment"
-        android:title="Discover"
+        android:title=""
         android:icon="@drawable/discover"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
     <item
-        android:id="@+id/favoriteFragment"
-        android:title="Favorite"
-        android:icon="@drawable/heart"
-        app:showAsAction="always"/>
+        android:id="@+id/ProfileFragment"
+        android:title=""
+        android:icon="@drawable/user"
+        app:showAsAction="always"
+        />
 
 
 </menu>

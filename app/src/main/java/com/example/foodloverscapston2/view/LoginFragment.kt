@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.fragment.findNavController
 import com.example.foodloverscapston2.R
-import com.example.foodloverscapston2.data.User
+import com.example.foodloverscapston2.data.models.User
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -39,6 +39,7 @@ class LoginFragment : Fragment() {
         val singUp_password_conf= view.findViewById<TextInputEditText>(R.id.singUp_password_conf)
         val btn_logIn = view.findViewById<Button>(R.id.singIn)
         val btn_singUp = view.findViewById<Button>(R.id.sing_Up)
+        val user_name = view.findViewById<TextInputEditText>(R.id.Name)
 
         val currentUser = auth.currentUser
         if(currentUser != null){
@@ -46,9 +47,9 @@ class LoginFragment : Fragment() {
         }
 
         btn_singUp.setOnClickListener{
-                if (checkEmpty(arrayListOf( singup_email, singup_passwords))) {
+                if (checkEmpty(arrayListOf( user_name ,singup_email, singup_passwords))) {
          if (singUp_password_conf.text.toString() != singup_passwords.text.toString()) {
-           singUp_password_conf.error = "Password mismatch"
+           singUp_password_conf.error = getString(R.string.password_mismatch)
          } else {
            auth.createUserWithEmailAndPassword(singup_email.text.toString(), singup_passwords.text.toString())
             .addOnCompleteListener { task ->
@@ -59,7 +60,8 @@ class LoginFragment : Fragment() {
                 .child(firebaseUserId)
                val user = User(
                   firebaseUserId,
-                  email.text.toString()
+                   singup_email.text.toString(),
+                  user_name.text.toString()
                )
              firebaseFirestore = FirebaseFirestore.getInstance()
              firebaseFirestore.collection("users").document(firebaseUserId)
@@ -71,7 +73,7 @@ class LoginFragment : Fragment() {
                  Log.w("TAG", "Error writing document", e)
                                         }
            Toast.makeText(context,
-           "You've created new account Successfully",
+           getString(R.string.you_have_created_new_account_successfully),
              Toast.LENGTH_LONG)
               .show()
 
@@ -88,13 +90,17 @@ class LoginFragment : Fragment() {
 
         btn_logIn.setOnClickListener{
         if (checkEmpty(arrayListOf(email, password))) {
+
+
+
+
         auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
             .addOnCompleteListener { task ->
             if (task.isSuccessful) {
             //val firebaseUser: FirebaseUser = task.result!!.user!!
              Toast.makeText(
                 context,
-                 "Login is Successfully",
+                 getString(R.string.login_is_successfully),
                  Toast.LENGTH_LONG
                    )
                  .show()
@@ -138,7 +144,7 @@ class LoginFragment : Fragment() {
         var returnValue = false
         for (i in arrayListOf) {
             if (i.text.toString() == "") {
-                i.error = "must be filled"
+                i.error = getString(R.string.must_be_filled)
                 returnValue = false
             } else {
                 returnValue = true

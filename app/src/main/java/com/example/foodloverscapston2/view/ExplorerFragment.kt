@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodloverscapston2.R
+import com.example.foodloverscapston2.data.viewModels.MealsViewModle
 
 class ExplorerFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
@@ -25,7 +26,7 @@ class ExplorerFragment : Fragment() {
         recyclerView = view.findViewById(R.id.rvExplorer)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        var vm = ViewModelProvider(this).get(MainVM::class.java)
+        var vm = ViewModelProvider(this).get(MealsViewModle::class.java)
 
         vm.fetchInterestingList().observe(viewLifecycleOwner,{
             recyclerView.adapter = MealAdapter(it.meals)
