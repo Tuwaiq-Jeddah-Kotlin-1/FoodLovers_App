@@ -6,11 +6,11 @@
   xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="370dp"
-        android:layout_height="230dp"
-        app:cardBackgroundColor="@color/white"
+        android:layout_width="350dp"
+        android:layout_height="240dp"
+        app:cardBackgroundColor="@color/light_gray"
         app:cardCornerRadius="20dp"
-        app:cardElevation="7dp"
+        app:cardElevation="15dp"
         android:layout_margin="15dp"
         android:layout_marginTop="-350dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,7 +24,7 @@
 
 
          <TextView
-             android:id="@+id/recipeName"
+             android:id="@+id/mealsName"
              android:layout_width="200dp"
              android:layout_height="35dp"
              android:layout_marginLeft="10dp"
@@ -57,16 +57,16 @@
         android:scaleType="centerCrop" />
 
          <ImageView
-             android:id="@+id/hearttwoIcon"
+             android:id="@+id/shareIconTwo"
              android:layout_width="40dp"
              android:layout_height="30dp"
              android:layout_marginTop="10dp"
-             android:src="@drawable/hearttwo"
+             android:src="@drawable/share"
              app:layout_constraintBottom_toBottomOf="parent"
              app:layout_constraintEnd_toEndOf="parent"
              app:layout_constraintHorizontal_bias="0.936"
              app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toTopOf="@+id/recipeName"
+             app:layout_constraintTop_toTopOf="@+id/mealsName"
              app:layout_constraintVertical_bias="0.0" />
 
 

@@ -2,17 +2,16 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/food1">
 
     <TextView
-        android:text="Food Lovers"
+        android:text="@string/welcome"
         android:gravity="center"
-        android:textSize="30sp"
-        android:layout_marginTop="45dp"
+        android:textSize="50sp"
+        android:layout_marginTop="40dp"
         android:textStyle="bold|normal|italic"
         android:textColor="@color/white"
         android:layout_width="match_parent"
@@ -21,7 +20,7 @@
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="-5dp"
         android:layout_marginStart="38dp"
         android:layout_marginEnd="38dp"
         app:cardUseCompatPadding="true"
@@ -63,7 +62,7 @@
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/singUp"
-                    android:text="Sing Up"
+                    android:text="@string/sing_up"
                     android:paddingTop="5dp"
                     android:textAlignment="center"
                     android:textColor="@color/black"
@@ -91,7 +90,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:hint="Email"
+                    android:hint="@string/email"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
@@ -116,7 +115,7 @@
                         android:textStyle="normal" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:hint="Password"
+                    android:hint="@string/password"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
@@ -143,7 +142,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
                 <TextView
                     android:textSize="11sp"
-                    android:text="Forget Password?"
+                    android:text="@string/forget_password"
                     android:textAlignment="textEnd"
                     android:textColor="#616161"
                     android:textStyle="normal"
@@ -175,9 +174,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:hint="@string/user_name"
+    app:shapeAppearanceOverlay="@style/Button4"
+    android:textColorHint="#4E4A4A"
+    app:boxStrokeColor="#4E4A4A"
+    app:boxStrokeWidth="1dp"
+    android:background="@color/white"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+    <com.google.android.material.textfield.TextInputEditText
+        android:inputType="textPersonName"
+        android:id="@+id/Name"
+        android:ems="10"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:textStyle="normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
+</com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:hint="Email"
+                    android:hint="@string/email"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
@@ -202,7 +225,7 @@
                         />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:hint="Password"
+                    android:hint="@string/password"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
@@ -228,7 +251,7 @@
                         />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:hint="Confirm Password"
+                    android:hint="@string/confirm_password"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
@@ -273,7 +296,7 @@
 
 
             <TextView
-                android:text="OR"
+                android:text="@string/or"
                 android:textSize="18sp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"

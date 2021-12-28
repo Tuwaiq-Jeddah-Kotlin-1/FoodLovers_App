@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FoodLovers</string>
+    <string name="enter_your_recipe_name">ادخل اسم الوصفة</string>
+    <string name="enter_recipe_instructions">ادخل الوصفة</string>
+    <string name="add">اضافة</string>
+    <string name="cancel">إلغاء</string>
+    <string name="recipe_name">اسم الوصفة</string>
+    <string name="recipe_instructions">الطريقة الوصفة</string>
+    <string name="update">تعديل</string>
+    <string name="welcome">مرحبا</string>
+    <string name="log_in">التسجيل الدخول</string>
+    <string name="sing_up">التسجيل</string>
+    <string name="password">كلمةالسر</string>
+    <string name="email">الايميل</string>
+    <string name="or">او</string>
+    <string name="forget_password">نسيت كلمةالسر ؟</string>
+    <string name="confirm_password">تاكيد كلمة السر</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="settings">الاعدادات :</string>
+    <string name="language">اللغة</string>
+    <string name="singout">التسجيل الخروج</string>
+    <string name="Enter_recipe_name_and_instruction">ادخل اسم الوصفة والطريقة</string>
+    <string name="password_mismatch">Password mismatch</string>
+    <string name="you_have_created_new_account_successfully">لقد انشئت حساب بنجاح</string>
+    <string name="login_is_successfully">تم التسجيل الدخول بنجاح</string>
+    <string name="must_be_filled">املأ الحقل</string>
+    <string name="add_recipe">اضف وصفة</string>
+    <string name="recipe_added_successfully">\"تم اضافة الوصفة \"</string>
+    <string name="there_are_no_changes">ليس هناك اي تغيرات</string>
+    <string name="user_name">اسم المستخدم</string>
+</resources>

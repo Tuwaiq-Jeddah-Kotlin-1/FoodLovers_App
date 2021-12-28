@@ -12,6 +12,7 @@ data class MealsData(
     val strInstructions : String,
     val strMealThumb : String,
     val strYoutube : String,
+    val strSource : String,
     val strIngredient1 : String,
     val strIngredient2 : String,
     val strIngredient3 : String,
