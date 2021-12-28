@@ -83,6 +83,16 @@ class EditFragment : Fragment() {
                     }
                 findNavController().navigate(R.id.actionEditFragmentToMyRecipeFragment)
             }
+        updateButton.setOnClickListener{
+           val uld = FirebaseAuth.getInstance().currentUser?.uid
+
+            val upDateUserData = Firebase.firestore.collection("users")
+            upDateUserData.document(uld.toString()).collection("listofrecipe").document(args.editdata.recipeID.toString())
+                .update("recipeName",editRecipeName.text
+          .toString(),"recipeInstructions",editRecipeInstructions.text.toString())
+                .addOnSuccessListener { Log.d(TAG, "Recipe Update successfully ") }
+                .addOnFailureListener { e -> Log.w(TAG, getString(R.string.there_are_no_changes), e) }
+            findNavController().navigate(R.id.actionEditFragmentToMyRecipeFragment)
         }
 
 

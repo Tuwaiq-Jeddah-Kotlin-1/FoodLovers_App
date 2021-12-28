@@ -3,7 +3,9 @@ package com.example.foodloverscapston2
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+ 
 import android.content.ContentValues.TAG
+ 
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -36,6 +38,26 @@ class MyWorker (context: Context, workerParameters: WorkerParameters):
             flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
          val pendingIntent = PendingIntent.getActivity(
+
+class MyWorker (context: Context, workerParameters: WorkerParameters):
+    Worker(context,workerParameters) {
+    companion object {
+        const val CHANNEL_ID = "Channel_id"
+        const val NOTIFICATION_ID = 1
+    }
+
+    override fun doWork(): Result {
+        Log.d("Tag", "do worker")
+        showNotification()
+        return Result.success()
+    }
+
+    private fun showNotification() {
+
+        val intent = Intent(applicationContext, MainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        val pendingIntent = PendingIntent.getActivity(
             applicationContext,
             0, intent, 0
         )
@@ -81,3 +103,7 @@ println(randomElement[0])
            return  randomElement[0].strMeal
      }
   }
+
+    }
+
+}
