@@ -8,7 +8,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 val current = LocalDateTime.now()
-val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm")
+val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH")
 val formatted = current.format(formatter)
 @Parcelize
 data class Recipe (

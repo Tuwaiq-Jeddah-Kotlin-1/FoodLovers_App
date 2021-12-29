@@ -16,6 +16,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class AddFragment : Fragment() {
@@ -52,18 +54,20 @@ class AddFragment : Fragment() {
              Toast.makeText(context,getString(R.string.Enter_recipe_name_and_instruction),Toast.LENGTH_LONG).show()
             } else {
 
-
+                val current = LocalDateTime.now()
+                val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-SS")
+                val formatted = current.format(formatter)
             val add = Recipe()
             add.recipeInstructions = addRecipeInstructions.text.toString()
             add.recipeName = addRecipeName.text.toString()
             var userId = FirebaseAuth.getInstance().currentUser?.uid
-            add.recipeID = "${userId.toString()}${add.dateRecipe}"
+            add.recipeID = "${userId.toString()}${formatted}"
 
             auth.currentUser?.let { it1 ->
                 db.collection("users").document(it1.uid).collection("listofrecipe")
                     .document("${add.recipeID}")
                     .set(add)
-                    .addOnSuccessListener { Log.d(TAG, getString(R.string.recipe_added_successfully)) }
+                    .addOnSuccessListener { Log.d(TAG, getString(R.string.recipe_added_successfully))}
                     .addOnFailureListener { e -> Log.w(TAG, getString(R.string.add_recipe), e) }
             }
             findNavController().navigate(R.id.actionAddFragmentToMyRecipeFragment)
