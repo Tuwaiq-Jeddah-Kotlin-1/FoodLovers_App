@@ -24,6 +24,7 @@ class MealAdapter (val data: List<MealsData>):RecyclerView.Adapter<MealsViewHold
         var mealdata = data[position]
         holder.image.load(mealdata.strMealThumb)
         holder.mealsName.text = mealdata.strMeal
+
 // send data to dis fragment
         holder.itemView.setOnClickListener {
             val action:NavDirections = ExplorerFragmentDirections.actionExplorerFragmentToDetailsFragment(mealdata)
@@ -49,5 +50,4 @@ class MealsViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
     val image : ImageView = itemView.findViewById(R.id.addedImage)
     val mealsName :TextView = itemView.findViewById(R.id.mealsName)
     val shareMeals: ImageView = itemView.findViewById(R.id.shareIconTwo)
-
 }

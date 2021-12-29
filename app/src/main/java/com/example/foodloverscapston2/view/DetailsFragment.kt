@@ -1,5 +1,6 @@
 package com.example.foodloverscapston2.view
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import com.example.foodloverscapston2.R
 
 
 class DetailsFragment : Fragment() {
+
     private lateinit var meal_n: TextView
     private lateinit var meal_ingredients: TextView
     private lateinit var t_ingredients: TextView
@@ -21,7 +23,11 @@ class DetailsFragment : Fragment() {
     private lateinit var tv_instructions: TextView
     private lateinit var imgg_meal: ImageView
     private lateinit var youtubeLink: ImageView
+    private  var info: String =""
+    private  var info2: String =""
 
+          var  ingr=  mutableListOf<Any>()
+          var meas = mutableListOf<Any>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,71 +36,59 @@ class DetailsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_details, container, false)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         val args: DetailsFragmentArgs by navArgs()
         val receivedData = args.mealsDis
+
+          ingr= mutableListOf(receivedData.strIngredient1, receivedData.strIngredient2,
+            receivedData.strIngredient3, receivedData.strIngredient4,receivedData.strIngredient5,
+            receivedData.strIngredient6, receivedData.strIngredient7, receivedData.strIngredient8,
+            receivedData.strIngredient9, receivedData.strIngredient10, receivedData.strIngredient11,
+            receivedData.strIngredient12, receivedData.strIngredient13, receivedData.strIngredient14,
+            receivedData.strIngredient15, receivedData.strIngredient16, receivedData.strIngredient17,
+            receivedData.strIngredient18, receivedData.strIngredient19, receivedData.strIngredient20)
+
+          meas = mutableListOf(receivedData.strMeasure1, receivedData.strMeasure2, receivedData.strMeasure3,
+           receivedData.strMeasure4, receivedData.strMeasure5, receivedData.strMeasure6,
+           receivedData.strMeasure7, receivedData.strMeasure8, receivedData.strMeasure9,
+           receivedData.strMeasure10, receivedData.strMeasure11, receivedData.strMeasure12,
+           receivedData.strMeasure13, receivedData.strMeasure14, receivedData.strMeasure15,
+           receivedData.strMeasure16, receivedData.strMeasure17, receivedData.strMeasure18,
+           receivedData.strMeasure19,receivedData.strMeasure20)
 
         meal_n = view.findViewById(R.id.meal_n)
         meal_ingredients = view.findViewById(R.id.meal_ingredients)
         t_ingredients = view.findViewById(R.id.t_ingredients)
-        t_measures = view.findViewById(R.id.t_measures)
+        t_measures = view.findViewById( R.id.t_measures)
         meal_instructions = view.findViewById(R.id.meal_instructions)
         tv_instructions = view.findViewById(R.id.tv_instructions)
         imgg_meal = view.findViewById(R.id.imgg_meal)
         youtubeLink = view.findViewById(R.id.youtubeLink)
 
+       t_ingredients.text = getInfo()
+        t_measures.text = getInfo2()
         meal_n.text = receivedData.strMeal
         tv_instructions.text = receivedData.strInstructions
         imgg_meal.load(receivedData.strMealThumb)
-
-
-//       youtubeLink.setOnClickListener {
+//        youtubeLink.setOnClickListener {
 //
-//     }
-//        t_ingredients.text = receivedData.strIngredient1
-//        t_ingredients.text = receivedData.strIngredient2
-//        t_ingredients.text = receivedData.strIngredient3
-//        t_ingredients.text = receivedData.strIngredient4
-//        t_ingredients.text = receivedData.strIngredient5
-//        t_ingredients.text = receivedData.strIngredient6
-//        t_ingredients.text = receivedData.strIngredient7
-//        t_ingredients.text = receivedData.strIngredient8
-//        t_ingredients.text = receivedData.strIngredient9
-//        t_ingredients.text = receivedData.strIngredient10
-//        t_ingredients.text = receivedData.strIngredient11
-//        t_ingredients.text = receivedData.strIngredient12
-//        t_ingredients.text = receivedData.strIngredient13
-//        t_ingredients.text = receivedData.strIngredient14
-//        t_ingredients.text = receivedData.strIngredient15
-//        t_ingredients.text = receivedData.strIngredient16
-//        t_ingredients.text = receivedData.strIngredient17
-//        t_ingredients.text = receivedData.strIngredient18
-//        t_ingredients.text = receivedData.strIngredient19
-//        t_ingredients.text = receivedData.strIngredient20
-//        t_ingredients_measures.text = receivedData.strMeasure1
-//        t_ingredients_measures.text = receivedData.strMeasure2
-//        t_ingredients_measures.text = receivedData.strMeasure3
-//        t_ingredients_measures.text = receivedData.strMeasure4
-//        t_ingredients_measures.text = receivedData.strMeasure5
-//        t_ingredients_measures.text = receivedData.strMeasure6
-//        t_ingredients_measures.text = receivedData.strMeasure7
-//        t_ingredients_measures.text = receivedData.strMeasure8
-//        t_ingredients_measures.text = receivedData.strMeasure9
-//        t_ingredients_measures.text = receivedData.strMeasure10
-//        t_ingredients_measures.text = receivedData.strMeasure11
-//        t_ingredients_measures.text = receivedData.strMeasure12
-//        t_ingredients_measures.text = receivedData.strMeasure13
-//        t_ingredients_measures.text = receivedData.strMeasure14
-//        t_ingredients_measures.text = receivedData.strMeasure15
-//        t_ingredients_measures.text = receivedData.strMeasure16
-//        t_ingredients_measures.text = receivedData.strMeasure17
-//        t_ingredients_measures.text = receivedData.strMeasure18
-//        t_ingredients_measures.text = receivedData.strMeasure19
-//        t_ingredients_measures.text = receivedData.strMeasure20
-
+//       }
     }
-
+    fun getInfo():String{
+        for (i in 0..19){
+            if (ingr[i].toString().isNotBlank()) {
+            info += ingr[i].toString()+"\n"
+        }
+    }
+        return  info
+    }
+    fun getInfo2():String{
+        for (i in 0..19){
+            if( meas[i].toString().isNotBlank()){
+                info2 += meas[i].toString()+"\n"
+            }
+        }
+        return info2
+    }
 }
 

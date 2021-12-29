@@ -25,8 +25,12 @@
     <string name="you_have_created_new_account_successfully">لقد انشئت حساب بنجاح</string>
     <string name="login_is_successfully">تم التسجيل الدخول بنجاح</string>
     <string name="must_be_filled">املأ الحقل</string>
-    <string name="add_recipe">اضف وصفة</string>
+    <string name="add_recipe">اضف الوصفة</string>
     <string name="recipe_added_successfully">\"تم اضافة الوصفة \"</string>
     <string name="there_are_no_changes">ليس هناك اي تغيرات</string>
     <string name="user_name">اسم المستخدم</string>
+    <string name="arabic">العربية</string>
+    <string name="english">الانجليزية</string>
+    <string name="Choose_language">اختار اللغة</string>
+    <string name="ok">ok</string>
 </resources>

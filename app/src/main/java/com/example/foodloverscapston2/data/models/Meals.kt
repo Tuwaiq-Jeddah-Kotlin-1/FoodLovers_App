@@ -54,19 +54,3 @@ data class MealsData(
     val strMeasure19 : String,
     val strMeasure20 : String,
   ):Parcelable
-//    {
-//
-//    var ingr = listOf<String>( strIngredient1, strIngredient2, strIngredient3, strIngredient4,strIngredient5,
-//        strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10, strIngredient11,
-//        strIngredient12, strIngredient13, strIngredient14, strIngredient15, strIngredient16, strIngredient17,
-//        strIngredient18, strIngredient19, strIngredient20)
-//    var meas = listOf(
-//        "receivedData.strMeasure1", "receivedData.strMeasure2", "receivedData.strMeasure3",
-//        "receivedData.strMeasure4", "receivedData.strMeasure5", "receivedData.strMeasure6",
-//        "receivedData.strMeasure7", "receivedData.strMeasure8", "receivedData.strMeasure9",
-//        "receivedData.strMeasure10", "receivedData.strMeasure11", "receivedData.strMeasure12",
-//        "receivedData.strMeasure13", "receivedData.strMeasure14", "receivedData.strMeasure15",
-//        "receivedData.strMeasure16", "receivedData.strMeasure17", "receivedData.strMeasure18",
-//        "receivedData.strMeasure19", "receivedData.strMeasure20"
-//    )
-//}

@@ -3,18 +3,22 @@ package com.example.foodloverscapston2
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.util.Log
+import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.example.foodloverscapston2.view.MainActivity
+import com.example.foodloverscapston2.view.l
 
 class MyWorker (context: Context, workerParameters: WorkerParameters):
     Worker(context,workerParameters) {
+
     companion object {
         const val CHANNEL_ID = "Channel_id"
         const val NOTIFICATION_ID = 1
@@ -28,20 +32,16 @@ class MyWorker (context: Context, workerParameters: WorkerParameters):
 
     private fun showNotification() {
 
+        var n = apiNotification()
         val intent = Intent(applicationContext, MainActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        }
-        val pendingIntent = PendingIntent.getActivity(
-            applicationContext,
-            0, intent, 0
-        )
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK }
+        val pendingIntent = PendingIntent.getActivity(applicationContext, 0, intent, 0)
 
         val notification = NotificationCompat.Builder(
             applicationContext,
-            CHANNEL_ID
-        )
+            CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_baseline_star_24)
-            .setContentTitle("New task")
+            .setContentTitle(n)
             .setContentText("there is stage need to be clear")
             .setPriority(NotificationCompat.PRIORITY_MAX)
             .setAutoCancel(true)
@@ -63,5 +63,14 @@ class MyWorker (context: Context, workerParameters: WorkerParameters):
             notify(NOTIFICATION_ID, notification.build())
         }
     }
+    private fun apiNotification():String {
 
+        val numberOfElement = 9
+        val randomElement =
+            l!!.asSequence().shuffled().take(numberOfElement).toList()
+
+        Log.e(TAG, "my msg ${randomElement[0]} ")
+        return  randomElement[0].strMeal
+    }
 }
+

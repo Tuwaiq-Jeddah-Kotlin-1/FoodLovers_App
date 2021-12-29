@@ -20,8 +20,6 @@ import com.google.firebase.ktx.Firebase
 
 class RecipeAdapter (val dataAdded : List<Recipe>): RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>(){
 
-   private lateinit var expandable : LinearLayout
-   private lateinit var cardView : CardView
    private var auth= Firebase.auth
    private  val db = Firebase.firestore
    var TAG = "MyRecipeFragment"
@@ -55,7 +53,6 @@ class RecipeAdapter (val dataAdded : List<Recipe>): RecyclerView.Adapter<RecipeA
           val deleteRecipe = Firebase.firestore.collection("users")
               .document("${userId.toString()}").collection("listofrecipe")
               .document(holder.idRe.toString()).delete()
-
                notifyItemRemoved(position)
             notifyItemRangeChanged(position, getItemCount())
         }
@@ -76,7 +73,7 @@ class RecipeAdapter (val dataAdded : List<Recipe>): RecyclerView.Adapter<RecipeA
     class RecipeViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val recipeName : TextView = itemView.findViewById(R.id.recipeName)
 //        val recipeInstructions: TextView = itemView.findViewById(R.id.recipeInstructions)
-        val detailsRecipe: ImageView = itemView.findViewById(R.id.detailsIcon)
+        val detailsRecipe: TextView = itemView.findViewById(R.id.detailsIcon)
         val shareRecipe: ImageView = itemView.findViewById(R.id.shareIcon)
         val deleteRecipe : ImageView = itemView.findViewById(R.id.delete)
         lateinit var idRe : String

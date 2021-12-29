@@ -83,10 +83,10 @@ class ProfileFragment : Fragment() {
     }
 
     fun showLangDialog(){
-        val langList = arrayOf("Arabic","English")
+        val langList = arrayOf(getString(R.string.arabic),getString(R.string.english))
         val lBuilder = AlertDialog.Builder(context)
-        lBuilder.setTitle("Choose Language")
-        lBuilder.setPositiveButton("ok"){ _,_ ->
+        lBuilder.setTitle(getString(R.string.Choose_language))
+        lBuilder.setPositiveButton(getString(R.string.ok)){ _, _ ->
             refreshCurrentFragment()
         }
         lBuilder.setSingleChoiceItems(langList,-1){
