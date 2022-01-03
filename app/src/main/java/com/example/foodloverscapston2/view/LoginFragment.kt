@@ -128,11 +128,11 @@ class LoginFragment : Fragment() {
             log_in.background = null
             sing_up_Layout.visibility = View.VISIBLE
             log_in_Layout.visibility = View.GONE
-            log_in.setTextColor(resources.getColor(R.color.beige,null))
+            log_in.setTextColor(resources.getColor(R.color.darkB,null))
         }
         log_in.setOnClickListener{
             sing_up.background = null
-            sing_up.setTextColor(resources.getColor(R.color.beige,null))
+            sing_up.setTextColor(resources.getColor(R.color.darkB,null))
             log_in.background = resources.getDrawable(R.drawable.switch_trcks,null)
             sing_up_Layout.visibility = View.GONE
             log_in_Layout.visibility = View.VISIBLE

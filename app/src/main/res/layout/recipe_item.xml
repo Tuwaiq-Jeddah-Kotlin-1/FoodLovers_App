@@ -6,7 +6,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
-        android:layout_height="222dp"
+        android:layout_height="215dp"
         app:cardBackgroundColor="@color/light_gray"
         app:cardCornerRadius="20dp"
         app:cardElevation="7dp"
@@ -19,17 +19,17 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
 
             <ImageView
                 android:id="@+id/im"
-                android:layout_width="150dp"
-                android:layout_height="125dp"
+                android:layout_width="100dp"
+                android:layout_height="90dp"
                 android:layout_marginRight="200dp"
                 android:layout_marginLeft="-10dp"
-                android:layout_marginTop="-30dp"
-                android:src="@drawable/im"
+                android:layout_marginTop="-15dp"
+                android:src="@drawable/rs"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -43,10 +43,10 @@
                 android:layout_height="65dp"
                 android:layout_marginLeft="-111dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/recipe_name"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,9 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="250dp"
                 android:layout_marginTop="-30dp"
-                android:text="Show more.."
+                android:text="@string/more_info"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="@+id/recipeName" />
@@ -82,7 +84,7 @@
                 android:layout_marginLeft="300dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="-30dp"
-                android:src="@drawable/delete"
+                android:src="@drawable/trash"
                 app:layout_constraintBottom_toBottomOf="@id/recipeName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

@@ -11,7 +11,7 @@
     <item
         android:id="@+id/explorerFragment"
         android:title=""
-        android:icon="@drawable/discover"
+        android:icon="@drawable/grid"
         app:showAsAction="always" />
     <item
         android:id="@+id/ProfileFragment"
