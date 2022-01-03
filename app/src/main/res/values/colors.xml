@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="textColor">#ECE5EC</color>
     <color name="light_gray">#FBFBFB</color>
-    <color name="beige">#decdb3</color>
     <color name="darkB">#d5bf96</color>
+    <color name="baige">#D9C6B0</color>
     <color name="transparentColor">#00FFFFFF</color>
 </resources>
