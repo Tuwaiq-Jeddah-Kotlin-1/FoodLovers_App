@@ -18,7 +18,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class RecipeAdapter (val dataAdded : List<Recipe>): RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>(){
+class RecipeAdapter (val dataAdded : MutableList<Recipe>): RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>(){
 
    private var auth= Firebase.auth
    private  val db = Firebase.firestore
@@ -53,7 +53,8 @@ class RecipeAdapter (val dataAdded : List<Recipe>): RecyclerView.Adapter<RecipeA
           val deleteRecipe = Firebase.firestore.collection("users")
               .document("${userId.toString()}").collection("listofrecipe")
               .document(holder.idRe.toString()).delete()
-               notifyItemRemoved(position)
+            dataAdded.removeAt(position)
+              notifyItemRemoved(position)
             notifyItemRangeChanged(position, getItemCount())
         }
 

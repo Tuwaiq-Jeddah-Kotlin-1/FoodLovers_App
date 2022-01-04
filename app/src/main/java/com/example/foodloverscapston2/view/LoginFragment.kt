@@ -25,6 +25,9 @@ class LoginFragment : Fragment() {
     private lateinit var ref: DatabaseReference
     private lateinit var auth: FirebaseAuth
 
+    private  val email_pattern = "[a-zA-Z0-9._]+@[a-z]+\\.+[a-z]+"
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -165,6 +168,14 @@ class LoginFragment : Fragment() {
             }
         }
         return returnValue
+    }
+
+    fun email(singup_email:String):Boolean{
+
+        if(singup_email.matches(email_pattern.toRegex()))
+
+          return true
+          return false
     }
 }
 
