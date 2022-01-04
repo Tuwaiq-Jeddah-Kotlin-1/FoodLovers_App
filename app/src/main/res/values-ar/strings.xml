@@ -14,7 +14,7 @@
     <string name="password">كلمةالسر</string>
     <string name="email">الايميل</string>
     <string name="or">او</string>
-    <string name="forget_password">نسيت كلمةالسر ؟</string>
+    <string name="forgot_password">نسيت كلمةالسر ؟</string>
     <string name="confirm_password">تاكيد كلمة السر</string>
     <string name="profile">الملف الشخصي</string>
     <string name="settings">الاعدادات :</string>

@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.LoginFragment -> bottomNavView.visibility = View.GONE
                 R.id.detailsFragment -> bottomNavView.visibility = View.GONE
+                R.id.forgotPassWordFragment -> bottomNavView.visibility = View.GONE
                 else -> bottomNavView.visibility = View.VISIBLE
             }
         }
