@@ -12,6 +12,9 @@
         <action
             android:id="@+id/actionLoginFragmentToMyRecipeFragment"
             app:destination="@id/myRecipeFragment" />
+        <action
+            android:id="@+id/actionLoginFragmentToForgotPassWordFragment"
+            app:destination="@id/forgotPassWordFragment" />
     </fragment>
     <fragment
         android:id="@+id/myRecipeFragment"
@@ -78,6 +81,15 @@
         tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/actionProfileFragmentToLoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPassWordFragment"
+        android:name="com.example.foodloverscapston2.view.ForgotPassWordFragment"
+        android:label="fragment_forgot_pass_word"
+        tools:layout="@layout/fragment_forgot_pass_word" >
+        <action
+            android:id="@+id/actionForgotPassWordFragmentToLoginFragment"
             app:destination="@id/LoginFragment" />
     </fragment>
 </navigation>

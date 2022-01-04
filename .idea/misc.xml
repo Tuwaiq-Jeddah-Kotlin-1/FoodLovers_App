@@ -15,7 +15,7 @@
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/drawable/white_gradient_bg.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/drawable/wv_rect.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/activity_splash.xml" value="0.18" />
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/custom_notify_layout.xml" value="0.182518115942029" />
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/explore_item.xml" value="0.22" />
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/favorite_item.xml" value="0.184375" />
@@ -25,6 +25,7 @@
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/fragment_edit.xml" value="0.1" />
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/fragment_explorer.xml" value="0.1358695652173913" />
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/fragment_favorite.xml" value="0.21" />
+        <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/fragment_forgot_pass_word.xml" value="0.22" />
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/fragment_my_recipe.xml" value="0.22" />
         <entry key="..\:/Users/DELL/FoodLoversCapston2/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
