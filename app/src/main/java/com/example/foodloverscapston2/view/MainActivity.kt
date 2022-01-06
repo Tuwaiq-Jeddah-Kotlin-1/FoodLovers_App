@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         var sharedPreferences = this.getSharedPreferences("share_pref", MODE_PRIVATE)
         var editor = sharedPreferences.edit()
         editor.putString("share_pref", lang)
-        editor.commit()
+        editor.apply()
     }
 }
 

@@ -5,12 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.foodloverscapston2.R
 import com.example.foodloverscapston2.data.models.Recipe
 import com.google.firebase.auth.FirebaseAuth
@@ -35,8 +34,8 @@ class RecipeAdapter (val dataAdded : MutableList<Recipe>): RecyclerView.Adapter<
 
         var recipedata = dataAdded[position]
         holder.recipeName.text = recipedata.recipeName
-//       holder.recipeInstructions.text = recipedata.recipeInstructions
-      holder.idRe = recipedata.recipeID
+        holder.idRe = recipedata.recipeID
+        holder.addedImage1.load(recipedata.image)
 
         holder.detailsRecipe.setOnClickListener {
             val recipe_data =Recipe()
@@ -44,6 +43,8 @@ class RecipeAdapter (val dataAdded : MutableList<Recipe>): RecyclerView.Adapter<
             recipe_data.recipeName = recipedata.recipeName
             recipe_data.recipeInstructions = recipedata.recipeInstructions
             recipe_data.recipeID = holder.idRe
+
+
             val action:NavDirections = MyRecipeFragmentDirections
             .actionMyRecipeFragmentToEditFragment(recipe_data)
             it.findNavController().navigate(action)
@@ -73,10 +74,10 @@ class RecipeAdapter (val dataAdded : MutableList<Recipe>): RecyclerView.Adapter<
     }
     class RecipeViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val recipeName : TextView = itemView.findViewById(R.id.recipeName)
-//        val recipeInstructions: TextView = itemView.findViewById(R.id.recipeInstructions)
         val detailsRecipe: TextView = itemView.findViewById(R.id.detailsIcon)
         val shareRecipe: ImageView = itemView.findViewById(R.id.shareIcon)
         val deleteRecipe : ImageView = itemView.findViewById(R.id.delete)
+        val addedImage1 : ImageView = itemView.findViewById(R.id.addedImage1)
         lateinit var idRe : String
     }
 }
