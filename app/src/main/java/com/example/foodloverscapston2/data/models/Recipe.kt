@@ -1,5 +1,6 @@
 package com.example.foodloverscapston2.data.models
 
+import android.net.Uri
 import android.os.Parcelable
 import android.util.Log
 import com.google.firebase.firestore.DocumentSnapshot
@@ -15,7 +16,8 @@ data class Recipe (
     var recipeName: String = "",
     var recipeInstructions: String = "",
     var recipeID : String = "",
-    var dateRecipe : String="$formatted"
+    var dateRecipe : String="$formatted",
+    var image : String=""
         ): Parcelable
 { companion object{
     fun DocumentSnapshot.toRecipe(): Recipe? {
@@ -24,8 +26,9 @@ data class Recipe (
             val recipeInstructions = getString("recipeInstructions")!!
             val recipeID= getString("recipeID")!!
             val dateRecipe = getString("dateRecipe")!!
+            val image = getString("image")!!
 
-            return Recipe(recipeName ,recipeInstructions, recipeID, dateRecipe)
+            return Recipe(recipeName ,recipeInstructions, recipeID, dateRecipe, image)
         } catch (e: Exception) {
             Log.e(TAG, "Error ", e)
             return null

@@ -11,8 +11,6 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
         tools:context=".view.AddFragment">
 
-
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="370dp"
@@ -75,6 +73,18 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.146" />
         </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="40dp"
+            android:layout_height="55dp"
+            android:src="@drawable/ic_baseline_camera_alt_24"
+            android:layout_marginTop="280dp"
+            android:layout_marginRight="300dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/addButton"

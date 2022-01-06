@@ -1,9 +1,9 @@
 package com.example.foodloverscapston2.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,6 +36,7 @@ class MyRecipeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         recyclerView = view.findViewById(R.id.rvRecipe)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
@@ -65,6 +66,6 @@ class MyRecipeFragment : Fragment() {
 
             findNavController().navigate(R.id.actionMyRecipeFragmentToAddFragment)
         }
+    }
 
-
-}}
+}
