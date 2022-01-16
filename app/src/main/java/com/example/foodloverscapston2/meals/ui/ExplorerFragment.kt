@@ -1,0 +1,90 @@
+package com.example.foodloverscapston2.meals.ui
+
+import android.content.ContentValues
+import android.os.Bundle
+import android.util.Log
+import android.view.*
+import android.widget.SearchView
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.work.*
+import com.example.foodloverscapston2.meals.MyWorker
+import com.example.foodloverscapston2.R
+import com.example.foodloverscapston2.meals.adapter.MealAdapter
+import com.example.foodloverscapston2.meals.data.models.MealsData
+import com.example.foodloverscapston2.meals.data.viewModels.MealsViewModle
+import java.util.concurrent.TimeUnit
+
+  var notifyList : List<MealsData>? = null
+
+class ExplorerFragment : Fragment() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var vm: MealsViewModle
+//    private lateinit var query:
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_explorer, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+//        val searchView = view.findViewById<SearchView>(R.id.serachView1)
+
+        recyclerView = view.findViewById(R.id.rvExplorer)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+         vm = ViewModelProvider(this).get(MealsViewModle::class.java)
+
+        vm.fetchInterestingList().observe(viewLifecycleOwner,{
+            recyclerView.adapter = MealAdapter(it.meals)
+
+            notifyList = it.meals
+            myWorkerManger()
+        })
+//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                Log.d(tag, "Query text : $query")
+//                loadMeals(query?.trim())
+//                return true
+//            }
+    //    })
+    }
+    private fun myWorkerManger() {
+        val constraints = Constraints.Builder()
+            .setRequiresCharging(false)
+            .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
+            .setRequiresCharging(false)
+            .setRequiresBatteryNotLow(true)
+            .build()
+        val myRequest = PeriodicWorkRequest.Builder(
+            MyWorker::class.java,5, TimeUnit.SECONDS
+        ).setConstraints(constraints)
+            .build()
+        WorkManager.getInstance(requireContext())
+            .enqueueUniquePeriodicWork("my_id", ExistingPeriodicWorkPolicy.KEEP,myRequest)
+        Log.e(ContentValues.TAG, "myWorkerManger: ", )
+    }
+//    private fun loadMeals(query: String? = null) {
+//
+//        vm.fetchInterestingList(query).observe(viewLifecycleOwner, {
+//            if (query.isNullOrEmpty()) {
+//
+//                recyclerView.adapter = MealAdapter(it.meals)
+//            } else {
+//                recyclerView.scrollToPosition(0)
+//                recyclerView.swapAdapter(MealAdapter(it.meals), false)
+//            }
+//            Log.d("Google books main Response", it.toString())
+//        })
+//    }
+}
+
+

@@ -28,7 +28,6 @@ class SplashActivity : AppCompatActivity() {
         tvAnim1.animation = anim
 
         Handler(Looper.getMainLooper()).postDelayed(Runnable {
-            //code
             startActivity(Intent(this, MainActivity::class.java))
         }, 2000)
     }
