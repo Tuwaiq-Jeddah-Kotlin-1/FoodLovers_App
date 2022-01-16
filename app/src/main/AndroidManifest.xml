@@ -15,8 +15,10 @@
         android:theme="@style/Theme.FoodLoversCapston2">
         <activity
             android:name=".view.SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar">
             <intent-filter>
+
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />

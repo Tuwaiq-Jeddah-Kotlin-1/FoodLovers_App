@@ -1,5 +1,6 @@
 package com.example.foodloverscapston2.view
 
+import com.example.foodloverscapston2.recipe.ui.LoginFragment
 import junit.framework.Assert.*
 import org.junit.Before
 import org.junit.Test

@@ -15,7 +15,7 @@
         android:layout_marginStart="38dp"
         android:layout_marginEnd="38dp"
         app:cardUseCompatPadding="true"
-        android:background="@color/darkB"
+        android:background="@color/light_gray"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -36,20 +36,21 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="125dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:src="@drawable/profile"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="user name :"
+                android:text="@string/UserName"
                 android:gravity="center_vertical"
                 android:textColor="#474646"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
+                android:fontFamily="@font/adamina"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="3dp"/>
@@ -57,25 +58,26 @@
             <TextView
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="Name"
                 android:gravity="center_vertical"
-                android:background="@drawable/raduis"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:layout_marginTop="3dp"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:layout_marginTop="7dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="3dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Emile :"
+                android:text="@string/Emile"
                 android:gravity="center_vertical"
                 android:textColor="#474646"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
-                android:layout_marginTop="5dp"
+                android:fontFamily="@font/adamina"
+                android:layout_marginTop="11dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="3dp" />
 
@@ -85,10 +87,10 @@
                 android:layout_height="wrap_content"
                 android:text="@string/email"
                 android:gravity="center_vertical"
-                android:background="@drawable/raduis"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:layout_marginTop="9dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="3dp" />
 
@@ -102,28 +104,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/settings"
-                    android:textSize="25dp"
-                    android:layout_marginRight="-59dp"
-                    android:layout_marginLeft="-70dp"
-                    android:textColor="#474646"
-                    android:layout_marginTop="-8dp"/>
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="29dp"
-                    android:layout_marginTop="-29dp"
-                    android:layout_marginRight="85dp"
-                    android:src="@drawable/settings"/>
 
                <Button
                    android:id="@+id/language"
-                   android:layout_width="match_parent"
+                   android:layout_width="150dp"
                    android:layout_height="wrap_content"
-                   android:layout_marginTop="15dp"
+                   android:layout_marginTop="10dp"
                    android:text="@string/language"
                    android:textSize="17sp"
                    android:textAllCaps="false"
@@ -131,10 +117,8 @@
                    android:gravity="center"
                    android:textColor="@color/black"
                    android:layout_gravity="center"
-                   app:shapeAppearanceOverlay="@style/Button5"
-                   app:backgroundTint="@color/darkB"  />
-
-
+                   app:shapeAppearanceOverlay="@style/Button4"
+                   app:backgroundTint="@color/blue"  />
 
             </LinearLayout>
 
@@ -143,7 +127,7 @@
                 android:gravity="center"
                 android:background="@color/light_gray"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="19dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -152,7 +136,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/singout"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/adamina"
+                    android:textStyle="bold"
                     android:textColor="#474646"
                     android:gravity="center"/>
 

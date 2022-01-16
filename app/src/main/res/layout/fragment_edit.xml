@@ -6,10 +6,31 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/light_gray"
+        android:background="@color/newB"
         app:layout_constraintBottom_toBottomOf="@+id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
-        tools:context=".view.EditFragment">
+        tools:context=".recipe.ui.EditFragment">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="159dp"
+            android:layout_height="186dp"
+            android:layout_marginStart="-11dp"
+            android:layout_marginBottom="564dp"
+            android:src="@drawable/splash_three"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="190dp"
+            android:layout_height="390dp"
+            android:layout_marginStart="245dp"
+            android:layout_marginBottom="-15dp"
+            android:src="@drawable/splash_two"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
         <androidx.cardview.widget.CardView
@@ -28,26 +49,26 @@
             <EditText
                 android:id="@+id/editRecipeName"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/raduis"
                 android:hint="@string/recipe_name"
                 android:textSize="20dp"
+                android:fontFamily="@font/adamina"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.146" />
+                app:layout_constraintTop_toTopOf="parent"/>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView4"
             android:layout_width="370dp"
             android:layout_height="300dp"
-            android:layout_marginTop="-100dp"
+            android:layout_marginTop="-70dp"
             android:background="@color/light_gray"
             app:cardCornerRadius="20dp"
             app:cardElevation="7dp"
@@ -61,56 +82,58 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:layout_marginTop="3dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/raduis"
                 android:gravity="top"
                 android:hint="@string/recipe_instructions"
                 android:textSize="25dp"
+                android:fontFamily="@font/adamina"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.146" />
+                app:layout_constraintTop_toTopOf="parent"/>
+
         </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/updateButton"
             android:layout_width="145dp"
             android:layout_height="80dp"
-            android:backgroundTint="@color/light_gray"
+            android:backgroundTint="@color/blue"
             android:layout_marginLeft="-22dp"
+            android:layout_marginRight="150dp"
+            android:layout_marginTop="-11dp"
             android:text="@string/update"
-            android:textColor="@color/darkB"
+            android:textColor="@color/black"
             android:textSize="20dp"
+            android:fontFamily="@font/adamina"
             android:textStyle="bold"
             app:shapeAppearanceOverlay="@style/Button4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.179"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView4"
-            app:layout_constraintVertical_bias="0.406" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView4"/>
 
         <Button
             android:id="@+id/cancellButton"
             android:layout_width="145dp"
             android:layout_height="80dp"
-            android:backgroundTint="@color/light_gray"
+            android:layout_marginTop="-11dp"
+            android:layout_marginLeft="33dp"
+            android:backgroundTint="@color/blue"
             android:text="@string/cancel"
-            android:textColor="@color/darkB"
+            android:textColor="@color/black"
             android:textSize="20dp"
+            android:fontFamily="@font/adamina"
             android:textStyle="bold"
-            android:layout_marginRight="-22dp"
+            android:layout_marginRight="-150dp"
             app:shapeAppearanceOverlay="@style/Button4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.791"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView4"
-            app:layout_constraintVertical_bias="0.404" />
-
+            app:layout_constraintTop_toBottomOf="@+id/cardView4"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

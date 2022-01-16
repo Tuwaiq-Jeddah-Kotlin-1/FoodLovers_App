@@ -7,8 +7,7 @@
     <string name="cancel">إلغاء</string>
     <string name="recipe_name">اسم الوصفة</string>
     <string name="recipe_instructions">الطريقة الوصفة</string>
-    <string name="update">تعديل</string>
-    <string name="welcome">مرحبا</string>
+    <string name="update">التعديل</string>
     <string name="log_in">التسجيل الدخول</string>
     <string name="sing_up">التسجيل</string>
     <string name="password">كلمةالسر</string>
@@ -34,4 +33,14 @@
     <string name="Choose_language">اختار اللغة</string>
     <string name="ok">حسنا</string>
     <string name="more_info">المزيد..</string>
+    <string name="explore">اكتشف</string>
+    <string name="myRecipe">وصفاتي</string>
+    <string name="userProfile">الملف الشخصي</string>
+    <string name="UserName">اسم المستخدم :</string>
+    <string name="Emile">الايميل :</string>
+    <string name="newReipe">وصفة جديدة</string>
+    <string name="Explore">اكتشف</string>
+    <string name="MyRecipe">وصفاتي</string>
+    <string name="EditRecipe">التعديل الوصفة</string>
+    <string name="Profile">الملف الشخصي</string>
 </resources>
