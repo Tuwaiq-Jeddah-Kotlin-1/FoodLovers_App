@@ -25,6 +25,12 @@ Links : [SRS](https://docs.google.com/document/d/1j1hFQ92R8gA3EcfJJIxGYVM-T-dmx4
 Application Screen :
 
  ![splash_gif](https://user-images.githubusercontent.com/91477063/150101647-2efa8cd9-eabc-4c9b-894c-e6cf23d46005.gif) ![rejister_gif](https://user-images.githubusercontent.com/91477063/150101872-5879e274-c1cc-4dc3-90d2-05369e283b69.gif) ![userProfile_gif](https://user-images.githubusercontent.com/91477063/150101899-9d578e5c-5288-40e3-a315-3552e15cc432.gif)
+ 
+  https://user-images.githubusercontent.com/91448520/150104857-0d86a2fb-3498-4b46-a663-428c813f791b.mov
+
+ 
+ 
+
 
 
 
