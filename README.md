@@ -13,7 +13,7 @@ Libraries Used :
 
 - Firebease
 - FireStore & Storage
-- Retrofit for Rest API : [TheMealsdb API](
+- Retrofit for Rest API : [TheMealsdb API](https://www.themealdb.com/api.php)
 - Work Manager for notifications
 - Coroutines
 - Android animation
