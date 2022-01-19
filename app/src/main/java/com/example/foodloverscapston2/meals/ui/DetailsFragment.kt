@@ -15,6 +15,7 @@ import android.widget.TextView
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.example.foodloverscapston2.R
+import com.google.common.base.Strings.isNullOrEmpty
 
 
 class DetailsFragment : Fragment() {
@@ -95,36 +96,47 @@ class DetailsFragment : Fragment() {
         youtubeLink.setOnClickListener {
             val url = "${receivedData.strYoutube}"
             val intentWeb = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-            val intentAbb = Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:"+url
-                .substring(url.indexOf("v=")+2)))
-          try{
-              it.context.startActivity(intentAbb)
+            val intentAbb = Intent(
+                Intent.ACTION_VIEW, Uri.parse(
+                    "vnd.youtube:" + url
+                        .substring(url.indexOf("v=") + 2)
+                )
+            )
+            try {
+                it.context.startActivity(intentAbb)
 
-          }catch (ex:ActivityNotFoundException){
-              it.context.startActivity(intentWeb)
+            } catch (ex: ActivityNotFoundException) {
+                it.context.startActivity(intentWeb)
 
-          }
-       }
+            }
+        }
     }
 
 
     fun getInfo(): String {
         for (i in 0..19) {
-            if (ingr[i].toString().isNotBlank()) {
-                info += ingr[i].toString() + "\n"
+            if (ingr[i] != null) {
+                if (ingr[i].toString().isNotBlank()) {
+                    info += ingr[i].toString() + "\n"
+                }
             }
         }
         return info
     }
 
+
     fun getInfo2(): String {
         for (i in 0..19) {
-            if (meas[i].toString().isNotBlank()) {
-                info2 += meas[i].toString() + "\n"
+            if (meas[i] != null) {
+                if (meas[i].toString().isNotBlank()) {
+                    info2 += meas[i].toString() + "\n"
+                }
             }
         }
         return info2
     }
 }
+
+
 
 

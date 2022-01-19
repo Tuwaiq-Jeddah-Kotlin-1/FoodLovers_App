@@ -15,16 +15,32 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/serachView1"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
         android:layout_marginBottom="60dp"/>
+
     <SearchView
-        android:id="@+id/serachView1"
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="39dp"
         android:background="@drawable/search_background"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:hint="Search"
+        android:textSize="13sp"
+        android:textColorHint="#636060"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="-4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/searchView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/searchView"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -62,8 +62,8 @@ dependencies {
     //nav
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
-    //glide for img
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.6.1'
     //swipe refresh
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
     //justified text

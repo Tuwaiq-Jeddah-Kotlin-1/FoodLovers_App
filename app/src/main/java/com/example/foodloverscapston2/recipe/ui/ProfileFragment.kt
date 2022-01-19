@@ -1,6 +1,5 @@
 package com.example.foodloverscapston2.recipe.ui
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context.MODE_PRIVATE
 import android.content.res.Configuration
@@ -12,7 +11,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.core.app.ActivityCompat.recreate
 import androidx.navigation.fragment.findNavController
 import com.example.foodloverscapston2.R
 import com.google.firebase.auth.FirebaseAuth
@@ -106,7 +104,6 @@ class ProfileFragment : Fragment() {
         val config = Configuration()
         config.locale = locale
         requireContext().resources.updateConfiguration(config,requireContext().resources.displayMetrics)
-//        recreate(context as Activity)
 
         var sharedPreferences = requireContext().getSharedPreferences("share_pref", MODE_PRIVATE)
         var editor = sharedPreferences.edit()

@@ -9,7 +9,7 @@
     <string name="recipe_instructions">الطريقة الوصفة</string>
     <string name="update">التعديل</string>
     <string name="log_in">التسجيل الدخول</string>
-    <string name="sing_up">التسجيل</string>
+    <string name="sing_up">التسجيل الجديد</string>
     <string name="password">كلمةالسر</string>
     <string name="email">الايميل</string>
     <string name="or">او</string>
@@ -43,4 +43,7 @@
     <string name="MyRecipe">وصفاتي</string>
     <string name="EditRecipe">التعديل الوصفة</string>
     <string name="Profile">الملف الشخصي</string>
+    <string name="forgot_Password">نسيان كلمة المرور</string>
+    <string name="enter_your_email_forgot">ادخل الايميل</string>
+    <string name="submit">إرسال</string>
 </resources>

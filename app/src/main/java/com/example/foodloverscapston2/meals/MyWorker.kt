@@ -41,7 +41,7 @@ class MyWorker (context: Context, workerParameters: WorkerParameters):
             applicationContext,
             CHANNEL_ID
         )
-            .setSmallIcon(R.drawable.food)
+            .setSmallIcon(R.drawable.app_logo)
             .setContentTitle(notify)
             .setContentText("New Recipe To Try Don't Miss it ")
             .setPriority(NotificationCompat.PRIORITY_MAX)

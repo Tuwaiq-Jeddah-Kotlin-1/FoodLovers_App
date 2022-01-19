@@ -16,11 +16,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         var shared = this.getSharedPreferences("share_pref", MODE_PRIVATE)
         var lang = shared.getString("share", "")
         setLocale(lang.toString())
+        setContentView(R.layout.activity_main)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment

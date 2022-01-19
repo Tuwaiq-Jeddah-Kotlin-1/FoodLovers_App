@@ -83,6 +83,7 @@
         android:label="@string/Profile"
         tools:layout="@layout/fragment_profile">
         <action
+            app:popUpTo="@+id/LoginFragment"
             android:id="@+id/actionProfileFragmentToLoginFragment"
             app:destination="@id/LoginFragment" />
     </fragment>
