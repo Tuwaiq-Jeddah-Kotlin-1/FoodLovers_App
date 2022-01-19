@@ -1,4 +1,4 @@
-# FoodRecipes-App
+# FoodLovers-App
 
 Demo Account :
 
@@ -13,20 +13,14 @@ Libraries Used :
 
 - Firebease
 - FireStore & Storage
-- Retrofit for Rest API 
+- Retrofit for Rest API : [TheMealsdb API](
 - Work Manager for notifications
 - Coroutines
 - Android animation
 - Lottie animation
 
-API : 
-
-
-SRS :
-
-https://docs.google.com/document/d/1j1hFQ92R8gA3EcfJJIxGYVM-T-dmx40M/edit?usp=sharing&ouid=113737670138646384220&rtpof=true&sd=true
-
-Presentaion Link :
+Links : [SRS](https://docs.google.com/document/d/1j1hFQ92R8gA3EcfJJIxGYVM-T-dmx40M/edit?usp=sharing&ouid=113737670138646384220&rtpof=true&sd=true)
+[Presentaion]()
 
 Application Screen :
  
