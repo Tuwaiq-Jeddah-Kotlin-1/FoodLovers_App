@@ -19,7 +19,7 @@ Libraries Used :
 - Android animation
 - Lottie animation
 
-Links : [SRS](https://docs.google.com/document/d/1j1hFQ92R8gA3EcfJJIxGYVM-T-dmx40M/edit?usp=sharing&ouid=113737670138646384220&rtpof=true&sd=true) , [Presentaion](https://docs.google.com/presentation/d/1f3OOvhlzGl1i-AKFy_4kjPxjozBsZjRJ/edit?usp=sharing&ouid=113737670138646384220&rtpof=true&sd=true)
+Links : [SRS](https://docs.google.com/document/d/1j1hFQ92R8gA3EcfJJIxGYVM-T-dmx40M/edit?usp=sharing&ouid=113737670138646384220&rtpof=true&sd=true) , [Presentaion](https://docs.google.com/presentation/d/1f3OOvhlzGl1i-AKFy_4kjPxjozBsZjRJ/edit?usp=sharing&ouid=113737670138646384220&rtpof=true&sd=true) , [Trello](https://trello.com/b/antdThcv/capston2foodlovers)
 
 
 Application Screen :
