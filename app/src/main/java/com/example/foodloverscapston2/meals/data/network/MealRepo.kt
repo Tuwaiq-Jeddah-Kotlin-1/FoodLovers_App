@@ -7,9 +7,12 @@ import kotlinx.coroutines.withContext
 class MealRepo {
     private val api = MealBuilder.mealAPI
 
-    suspend fun fetchInterestingList():Meals = withContext(Dispatchers.IO){
+    suspend fun fetchMeals(): Meals = withContext(Dispatchers.IO) {
         api.fetchPhotos()
     }
 
+    suspend fun fetchSearch(name:String): Meals = withContext(Dispatchers.IO){
+        api.fetchSearch(name)
+    }
 
 }

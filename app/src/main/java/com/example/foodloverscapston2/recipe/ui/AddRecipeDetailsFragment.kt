@@ -36,7 +36,7 @@ class AddRecipeDetailsFragment : Fragment() {
         recipe_instructions = view.findViewById(R.id.recipe_instructions)
         rtv_instructions = view.findViewById(R.id.rtv_instructions)
         imgg_recipe.load(args.detailsdata.image)
-        recipe_n.text = args.detailsdata.recipeName
+        recipe_n.text = "( ${args.detailsdata.recipeName} )"
         rtv_instructions.text = args.detailsdata.recipeInstructions
     }
 

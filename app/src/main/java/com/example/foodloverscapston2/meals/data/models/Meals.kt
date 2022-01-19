@@ -5,7 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 data class Meals (
     val meals:List<MealsData>
-        )
+)
 @Parcelize
 data class MealsData(
     val strMeal : String,

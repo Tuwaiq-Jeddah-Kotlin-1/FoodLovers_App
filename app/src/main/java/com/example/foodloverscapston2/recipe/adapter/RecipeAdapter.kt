@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.NavDirections
@@ -17,9 +18,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class RecipeAdapter (val dataAdded : MutableList<Recipe>): RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>(){
 
-   val userId = FirebaseAuth.getInstance().currentUser?.uid
+class RecipeAdapter (private val dataAdded : MutableList<Recipe>): RecyclerView.Adapter<RecipeAdapter
+.RecipeViewHolder>() {
+
+    private val userId = FirebaseAuth.getInstance().currentUser?.uid
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
         val recipeRC = LayoutInflater.from(parent.context)
@@ -81,6 +84,7 @@ class RecipeAdapter (val dataAdded : MutableList<Recipe>): RecyclerView.Adapter<
     override fun getItemCount(): Int {
         return dataAdded.size
     }
+
     class RecipeViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val recipeName : TextView = itemView.findViewById(R.id.recipeName)
         val shareRecipe: ImageView = itemView.findViewById(R.id.shareIcon)

@@ -6,10 +6,9 @@ import retrofit2.http.Query
 
 interface MealAPI {
 
-  @GET("/api/json/v2/9973533/latest.php")
+    @GET("/api/json/v2/1/search.php?s=")
        suspend fun fetchPhotos(): Meals
 
-//  @GET("/api/json/v2/1/search.php?")
-//
-//  suspend fun fetchSearch(@Query("s")name:String) : Meals
+    @GET("/api/json/v1/1/search.php")
+     suspend fun fetchSearch(@Query("f")name:String) : Meals
 }

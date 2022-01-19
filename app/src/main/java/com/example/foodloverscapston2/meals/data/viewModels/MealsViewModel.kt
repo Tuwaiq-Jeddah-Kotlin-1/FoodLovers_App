@@ -9,16 +9,20 @@ import com.example.foodloverscapston2.meals.data.models.Meals
 import com.example.foodloverscapston2.meals.data.network.MealRepo
 import kotlinx.coroutines.launch
 
-class MealsViewModle : ViewModel() {
+class MealsViewModel : ViewModel() {
 
-    val repo = MealRepo()
+    private val repo = MealRepo()
 
-    fun fetchInterestingList(query: String?=null): LiveData<Meals> {
+    fun fetchMealsList(name: String?=null): LiveData<Meals> {
 
         var meals = MutableLiveData<Meals>()
         viewModelScope.launch {
             try {
-                meals.postValue(repo.fetchInterestingList())
+                if (name.isNullOrEmpty()){
+                    meals.postValue(repo.fetchMeals())
+                }else{
+                   meals.postValue(repo.fetchSearch(name))
+                }
 
             }catch (e: Throwable){
 
