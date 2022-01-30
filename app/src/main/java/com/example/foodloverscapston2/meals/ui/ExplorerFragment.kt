@@ -5,8 +5,9 @@ import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.ImageView
 import android.widget.SearchView
-import android.widget.Toast
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,11 +27,14 @@ class ExplorerFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var vm: MealsViewModel
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_explorer, container, false)
+        val view = inflater.inflate(R.layout.fragment_explorer, container, false)
+
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,11 +64,11 @@ class ExplorerFragment : Fragment() {
                 }
                 return true
             }
+
             override fun onQueryTextChange(newText: String?): Boolean {
-                Toast.makeText(context, "Please Enter letter or word", Toast.LENGTH_LONG)
-                    .show()
                 Log.d(TAG,"QueryTextChange: $newText")
                 return false
+
             }
         })
     }
@@ -73,6 +77,7 @@ class ExplorerFragment : Fragment() {
         vm.fetchMealsList(query).observe(viewLifecycleOwner, {
                 recyclerView.adapter = MealAdapter(it.meals)
             Log.d("Meals main Response", it.toString())
+
         })
     }
 

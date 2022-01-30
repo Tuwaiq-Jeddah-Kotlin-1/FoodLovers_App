@@ -11,7 +11,7 @@
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:layout_marginStart="38dp"
         android:layout_marginEnd="38dp"
         app:cardUseCompatPadding="true"
@@ -52,21 +52,19 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/adamina"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="6dp"
                 android:layout_marginRight="3dp"/>
 
             <TextView
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Name"
-                android:gravity="center_vertical"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textStyle="italic"
                 android:layout_marginTop="7dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="3dp"/>
+                android:layout_marginLeft="5dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -78,7 +76,7 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/adamina"
                 android:layout_marginTop="11dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="6dp"
                 android:layout_marginRight="3dp" />
 
             <TextView
@@ -86,13 +84,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/email"
-                android:gravity="center_vertical"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textStyle="italic"
                 android:layout_marginTop="9dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="3dp" />
+                android:layout_marginLeft="5dp"/>
 
             <LinearLayout
                 android:id="@+id/logInLayout"
@@ -107,11 +103,11 @@
 
                <Button
                    android:id="@+id/language"
-                   android:layout_width="150dp"
-                   android:layout_height="wrap_content"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
                    android:layout_marginTop="10dp"
                    android:text="@string/language"
-                   android:textSize="17sp"
+                   android:textSize="14sp"
                    android:textAllCaps="false"
                    android:elevation="15dp"
                    android:gravity="center"

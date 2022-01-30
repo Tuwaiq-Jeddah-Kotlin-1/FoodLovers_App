@@ -43,7 +43,7 @@
                 android:paddingTop="5dp"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:paddingBottom="5dp"
@@ -62,7 +62,7 @@
                android:paddingTop="5dp"
                android:textAlignment="center"
                android:textColor="@color/black"
-               android:textSize="16sp"
+               android:textSize="12sp"
                android:layout_gravity="center"
                android:gravity="center"
                android:paddingBottom="5dp"
@@ -141,19 +141,20 @@
 
                 <TextView
                     android:id="@+id/forgot"
-                    android:textSize="15sp"
+                    android:textSize="9sp"
                     android:text="@string/forgot_password"
                     android:textAlignment="textEnd"
                     android:textColor="#4E4A4A"
                     android:textStyle="normal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="65dp"/>
+                    android:layout_marginLeft="95dp"
+                    android:layout_marginRight="30dp"/>
 
                 <Button
                     android:id="@+id/singIn"
                     android:text="@string/log_in"
-                    android:textSize="17sp"
+                    android:textSize="14sp"
                     android:textAllCaps="false"
                     android:elevation="15dp"
                     android:gravity="center"
@@ -310,7 +311,7 @@
                 <Button
                 android:id="@+id/sing_Up"
                 android:text="@string/sing_up"
-                android:textSize="17sp"
+                android:textSize="14sp"
                 android:textAllCaps="false"
                 android:elevation="15dp"
                 android:gravity="center"

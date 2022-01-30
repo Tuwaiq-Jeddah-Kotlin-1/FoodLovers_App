@@ -19,7 +19,7 @@
     <string name="settings">الاعدادات :</string>
     <string name="language">اللغة</string>
     <string name="singout">التسجيل الخروج</string>
-    <string name="Enter_recipe_name_and_instruction">ادخل اسم الوصفة والطريقة</string>
+    <string name="Enter_recipe_name_and_instruction">ادخل اسم الوصفة,الطريقة والصورة</string>
     <string name="password_mismatch">Password mismatch</string>
     <string name="you_have_created_new_account_successfully">لقد انشئت حساب بنجاح</string>
     <string name="login_is_successfully">تم التسجيل الدخول بنجاح</string>
@@ -46,4 +46,8 @@
     <string name="forgot_Password">نسيان كلمة المرور</string>
     <string name="enter_your_email_forgot">ادخل الايميل</string>
     <string name="submit">إرسال</string>
+    <string name="search">البحث</string>
+    <string name="addrecipe">إضافة وصفه</string>
+    <string name="no_recipe">لا يوجد وصفات</string>
+    <string name="no_result_found">لا توجد نتائج</string>
 </resources>
