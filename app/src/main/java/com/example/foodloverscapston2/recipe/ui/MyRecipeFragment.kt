@@ -3,6 +3,7 @@ package com.example.foodloverscapston2.recipe.ui
 import android.os.Bundle
 import android.view.*
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,8 @@ class MyRecipeFragment : Fragment() {
     private lateinit var newRecipeButton: ImageView
     private lateinit var recyclerView: RecyclerView
     private lateinit var auth: FirebaseAuth
+    private lateinit var noRecipe : ImageView
+    private lateinit var tvNoRecipe : TextView
 
          override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
@@ -32,22 +35,32 @@ class MyRecipeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_my_recipe,container, false)
         val db = FirebaseFirestore.getInstance()
 
+             noRecipe = view.findViewById(R.id.noRecipe)
+            tvNoRecipe= view.findViewById(R.id.tvNoRecipe)
+
         try {
             auth.currentUser?.let { it1 ->
                 db.collection("users").document(it1.uid)
                     .collection("listofrecipe")
                     .get()
                     .addOnSuccessListener {
-                        var recipeList = mutableListOf<Recipe>()
+                        val recipeList = mutableListOf<Recipe>()
+
                         it.forEach {
                             it.toRecipe()?.let { it2 ->
                                 recipeList.add(it2)
                             }
-                             recyclerView.adapter = RecipeAdapter (recipeList)
+            if(recipeList.isNotEmpty()) {
+                noRecipe.visibility = View.GONE
+                tvNoRecipe.visibility = View.GONE
+        }
+           recyclerView.adapter = RecipeAdapter (recipeList, noRecipe, tvNoRecipe)
+
                         }
                     }
             }
         } catch (e: Exception) { }
+
         return view
     }
 
@@ -58,6 +71,7 @@ class MyRecipeFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         newRecipeButton = view.findViewById(R.id.newRecipeButton)
+
 
         newRecipeButton.setOnClickListener {
 

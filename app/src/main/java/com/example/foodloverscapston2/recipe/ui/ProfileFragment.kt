@@ -1,5 +1,6 @@
 package com.example.foodloverscapston2.recipe.ui
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context.MODE_PRIVATE
 import android.content.res.Configuration
@@ -11,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.app.ActivityCompat.recreate
 import androidx.navigation.fragment.findNavController
 import com.example.foodloverscapston2.R
 import com.google.firebase.auth.FirebaseAuth
@@ -84,15 +86,16 @@ class ProfileFragment : Fragment() {
         val langList = arrayOf(getString(R.string.arabic),getString(R.string.english))
         val lBuilder = AlertDialog.Builder(context)
         lBuilder.setTitle(getString(R.string.Choose_language))
-        lBuilder.setPositiveButton(getString(R.string.ok)){ _, _ ->
-            refreshCurrentFragment()
-        }
+//        lBuilder.setPositiveButton(getString(R.string.ok)){ _, _ ->
+//        }
         lBuilder.setSingleChoiceItems(langList,-1){
             dialog, which ->
             if (which == 0){
                 setLocale("ar")
+                refreshCurrentFragment()
             }else{
                 setLocale("en")
+                refreshCurrentFragment()
             }
         }
         val langDialog = lBuilder.create()
@@ -105,10 +108,12 @@ class ProfileFragment : Fragment() {
         config.locale = locale
         requireContext().resources.updateConfiguration(config,requireContext().resources.displayMetrics)
 
-        var sharedPreferences = requireContext().getSharedPreferences("share_pref", MODE_PRIVATE)
-        var editor = sharedPreferences.edit()
+        val sharedPreferences = requireContext().getSharedPreferences("share_pref", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
         editor.putString("share", lang)
         editor.apply()
+        recreate(context as Activity)
+
     }
 
 }

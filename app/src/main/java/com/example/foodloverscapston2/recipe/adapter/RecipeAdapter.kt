@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -19,10 +20,11 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
-class RecipeAdapter (private val dataAdded : MutableList<Recipe>): RecyclerView.Adapter<RecipeAdapter
+class RecipeAdapter (private val dataAdded : MutableList<Recipe> , private  val noRecipe : ImageView , private val tvNoRecipe : TextView): RecyclerView.Adapter<RecipeAdapter
 .RecipeViewHolder>() {
 
     private val userId = FirebaseAuth.getInstance().currentUser?.uid
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
         val recipeRC = LayoutInflater.from(parent.context)
@@ -69,6 +71,11 @@ class RecipeAdapter (private val dataAdded : MutableList<Recipe>): RecyclerView.
             dataAdded.removeAt(position)
               notifyItemRemoved(position)
             notifyItemRangeChanged(position, getItemCount())
+
+            if(itemCount == 0){
+                    noRecipe.isVisible= true
+                    tvNoRecipe.isVisible= true
+            }
         }
 
            val url = "${recipedata.recipeName}:\n${recipedata.recipeInstructions}"

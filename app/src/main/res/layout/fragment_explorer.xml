@@ -29,13 +29,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:hint="Search"
+        android:hint="@string/search"
         android:textSize="13sp"
         android:textColorHint="#636060"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="4dp"
         android:layout_marginBottom="-4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/searchView"

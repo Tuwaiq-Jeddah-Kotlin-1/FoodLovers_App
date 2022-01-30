@@ -18,7 +18,7 @@
     <string name="settings">Settings :</string>
     <string name="language">Language</string>
     <string name="singout">SingOut</string>
-    <string name="Enter_recipe_name_and_instruction">Enter recipe name and instruction</string>
+    <string name="Enter_recipe_name_and_instruction">Enter recipe name,instruction and image</string>
     <string name="password_mismatch">Password mismatch</string>
     <string name="you_have_created_new_account_successfully">You\'ve created new account Successfully</string>
     <string name="login_is_successfully">Login Successfully</string>
@@ -42,4 +42,11 @@
     <string name="MyRecipe">MyRecipe</string>
     <string name="EditRecipe">EditRecipe</string>
     <string name="Profile">Profile</string>
+    <string name="forgot_Password">Forgot password</string>
+    <string name="enter_your_email_forgot">Enter your Email</string>
+    <string name="submit">Submit</string>
+    <string name="search">Search</string>
+    <string name="addrecipe">AddRecipe</string>
+    <string name="no_recipe">No Recipes</string>
+    <string name="no_result_found">No Result Found</string>
 </resources>

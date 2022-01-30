@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +15,7 @@ import com.example.foodloverscapston2.R
 import com.example.foodloverscapston2.meals.data.models.MealsData
 import com.example.foodloverscapston2.meals.ui.ExplorerFragmentDirections
 
-class MealAdapter (val data: List<MealsData>):RecyclerView.Adapter<MealsViewHolder>(){
+class MealAdapter (val data: List<MealsData> ):RecyclerView.Adapter<MealsViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealsViewHolder {
         val mealsView = LayoutInflater.from(parent.context).inflate(R.layout.explore_item,parent,false)
@@ -26,9 +27,11 @@ class MealAdapter (val data: List<MealsData>):RecyclerView.Adapter<MealsViewHold
         holder.image.load(mealdata.strMealThumb)
         holder.mealsName.text = mealdata.strMeal
 
+
         holder.itemView.setOnClickListener {
             val action:NavDirections = ExplorerFragmentDirections.actionExplorerFragmentToDetailsFragment(mealdata)
             it.findNavController().navigate(action)
+
         }
 
         val url = "${mealdata.strSource}"
@@ -40,6 +43,7 @@ class MealAdapter (val data: List<MealsData>):RecyclerView.Adapter<MealsViewHold
                 it.context.startActivity(Intent.createChooser(intent, "Share using"))
             }
         }
+
 
     override fun getItemCount(): Int {
        return data.size
